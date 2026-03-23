@@ -9,7 +9,6 @@ Short: Designed a star schema (fact_event + dims) and analytics queries (DAU, to
 4. `python load_to_postgres.py --csv data/events.csv --pg postgresql://demo:demo@localhost:5432/analytics`
 5. `python bench_queries.py --pg postgresql://demo:demo@localhost:5432/analytics --queries queries.sql --explain`
 
-## What to show on resume
 - Built analytics pipeline: star schema, DAU/top-N/retention/funnel queries, and query optimizations with indexing and EXPLAIN analysis.
 - Example resume line:
   > Designed a star-schema analytics pipeline and authored DAU, top-N, rolling-7d retention and funnel queries; benchmarked queries and tuned indexes to improve query performance. (Demo data: synthetic.)
