@@ -1,15 +1,19 @@
 version: '3.8'
+
 services:
-  postgres:
-    image: postgres:15
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_analytics
     environment:
-      POSTGRES_USER: demo
-      POSTGRES_PASSWORD: demo
-      POSTGRES_DB: analytics
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: analytics
+      MYSQL_USER: demo
+      MYSQL_PASSWORD: demo
     ports:
-      - "5432:5432"
+      - "3306:3306"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - mysqldata:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
 
 volumes:
-  pgdata:
+  mysqldata:
